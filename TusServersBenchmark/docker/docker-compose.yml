@@ -1,0 +1,42 @@
+services:
+  bm_dotnet:
+    build:
+      context: ../TusDotNetServer
+      dockerfile: Dockerfile
+    environment:
+      ASPNETCORE_URLS: http://+:80
+    volumes:
+      - bm_dotnet_data:/etc/tusfiles
+    ports:
+      - "8082:80"
+    restart: unless-stopped
+
+  bm_dotnet_aot:
+    build:
+      context: ../TusDotNetAotServer
+      dockerfile: Dockerfile
+    environment:
+      ASPNETCORE_URLS: http://+:8080
+    volumes:
+      - bm_dotnet_aot_data:/etc/tusfiles
+    ports:
+      - "8083:8080"
+    restart: unless-stopped
+
+  bm_golang:
+    image: tusproject/tusd:latest
+    command:
+      - "-host=0.0.0.0"
+      - "-port=8080"
+      - "-base-path=/files"
+      - "-upload-dir=/srv/tusd-data"
+    volumes:
+      - bm_tusd_data:/srv/tusd-data
+    ports:
+      - "8084:8080"
+    restart: unless-stopped
+
+volumes:
+  bm_dotnet_data:
+  bm_dotnet_aot_data:
+  bm_tusd_data:

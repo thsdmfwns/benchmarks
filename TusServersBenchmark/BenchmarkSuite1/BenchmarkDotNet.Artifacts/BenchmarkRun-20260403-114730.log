@@ -1,0 +1,702 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 9 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet  restore --nodeReuse:false /p:UseSharedCompilation=false /p:Deterministic=true /p:Optimize=true /p:ArtifactsPath="C:\Users\SSAFY\Documents\blog\benchmarks\BenchmarkSuite1\BenchmarkSuite1\bin\Release\net10.0\BenchmarkSuite1-.NET 10.0-1/" /p:OutDir="C:\Users\SSAFY\Documents\blog\benchmarks\BenchmarkSuite1\BenchmarkSuite1\bin\Release\net10.0\BenchmarkSuite1-.NET 10.0-1\bin\Release\net10.0/" /p:OutputPath="C:\Users\SSAFY\Documents\blog\benchmarks\BenchmarkSuite1\BenchmarkSuite1\bin\Release\net10.0\BenchmarkSuite1-.NET 10.0-1\bin\Release\net10.0/" /p:PublishDir="C:\Users\SSAFY\Documents\blog\benchmarks\BenchmarkSuite1\BenchmarkSuite1\bin\Release\net10.0\BenchmarkSuite1-.NET 10.0-1\publish/" in C:\Users\SSAFY\Documents\blog\benchmarks\BenchmarkSuite1\BenchmarkSuite1\bin\Release\net10.0\BenchmarkSuite1-.NET 10.0-1
+// command took 0.93 sec and exited with 0
+// start dotnet  build -c Release --no-restore --nodeReuse:false /p:UseSharedCompilation=false /p:Deterministic=true /p:Optimize=true /p:ArtifactsPath="C:\Users\SSAFY\Documents\blog\benchmarks\BenchmarkSuite1\BenchmarkSuite1\bin\Release\net10.0\BenchmarkSuite1-.NET 10.0-1/" /p:OutDir="C:\Users\SSAFY\Documents\blog\benchmarks\BenchmarkSuite1\BenchmarkSuite1\bin\Release\net10.0\BenchmarkSuite1-.NET 10.0-1\bin\Release\net10.0/" /p:OutputPath="C:\Users\SSAFY\Documents\blog\benchmarks\BenchmarkSuite1\BenchmarkSuite1\bin\Release\net10.0\BenchmarkSuite1-.NET 10.0-1\bin\Release\net10.0/" /p:PublishDir="C:\Users\SSAFY\Documents\blog\benchmarks\BenchmarkSuite1\BenchmarkSuite1\bin\Release\net10.0\BenchmarkSuite1-.NET 10.0-1\publish/" --output "C:\Users\SSAFY\Documents\blog\benchmarks\BenchmarkSuite1\BenchmarkSuite1\bin\Release\net10.0\BenchmarkSuite1-.NET 10.0-1\bin\Release\net10.0/" in C:\Users\SSAFY\Documents\blog\benchmarks\BenchmarkSuite1\BenchmarkSuite1\bin\Release\net10.0\BenchmarkSuite1-.NET 10.0-1
+// command took 3.29 sec and exited with 0
+// ***** Done, took 00:00:04 (4.29 sec)   *****
+// Found 3 benchmarks:
+//   Benchmarks100Mb.SendByDotnet: .NET 10.0(Runtime=.NET 10.0, IterationCount=10, WarmupCount=3)
+//   Benchmarks100Mb.SendByDotnetAOT: .NET 10.0(Runtime=.NET 10.0, IterationCount=10, WarmupCount=3)
+//   Benchmarks100Mb.SendByGo: .NET 10.0(Runtime=.NET 10.0, IterationCount=10, WarmupCount=3)
+
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 고성능)
+// **************************
+// Benchmark: Benchmarks100Mb.SendByDotnet: .NET 10.0(Runtime=.NET 10.0, IterationCount=10, WarmupCount=3)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "BenchmarkSuite1-.NET 10.0-1.dll" --anonymousPipes 1684 1680 --benchmarkName BenchmarkSuite1.Benchmarks100Mb.SendByDotnet --job ".NET 10.0" --benchmarkId 0 in C:\Users\SSAFY\Documents\blog\benchmarks\BenchmarkSuite1\BenchmarkSuite1\bin\Release\net10.0\BenchmarkSuite1-.NET 10.0-1\bin\Release\net10.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.8
+// Runtime=.NET 10.0.5 (10.0.5, 10.0.526.15411), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 10.0(IterationCount=10, WarmupCount=3)
+
+OverheadJitting  1: 1 op, 129900.00 ns, 129.9000 us/op
+WorkloadJitting  1: 1 op, 3137407600.00 ns, 3.1374 s/op
+
+OverheadJitting  2: 1 op, 800.00 ns, 800.0000 ns/op
+WorkloadJitting  2: 1 op, 2977647500.00 ns, 2.9776 s/op
+
+WorkloadWarmup   1: 1 op, 2843866400.00 ns, 2.8439 s/op
+WorkloadWarmup   2: 1 op, 2384966200.00 ns, 2.3850 s/op
+WorkloadWarmup   3: 1 op, 2755511000.00 ns, 2.7555 s/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 2799476000.00 ns, 2.7995 s/op
+WorkloadActual   2: 1 op, 3071228700.00 ns, 3.0712 s/op
+WorkloadActual   3: 1 op, 2924236900.00 ns, 2.9242 s/op
+WorkloadActual   4: 1 op, 3144948500.00 ns, 3.1449 s/op
+WorkloadActual   5: 1 op, 2767023600.00 ns, 2.7670 s/op
+WorkloadActual   6: 1 op, 3195834000.00 ns, 3.1958 s/op
+WorkloadActual   7: 1 op, 3131519200.00 ns, 3.1315 s/op
+WorkloadActual   8: 1 op, 3249727200.00 ns, 3.2497 s/op
+WorkloadActual   9: 1 op, 3356489500.00 ns, 3.3565 s/op
+WorkloadActual  10: 1 op, 3965368500.00 ns, 3.9654 s/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 2799476000.00 ns, 2.7995 s/op
+WorkloadResult   2: 1 op, 3071228700.00 ns, 3.0712 s/op
+WorkloadResult   3: 1 op, 2924236900.00 ns, 2.9242 s/op
+WorkloadResult   4: 1 op, 3144948500.00 ns, 3.1449 s/op
+WorkloadResult   5: 1 op, 2767023600.00 ns, 2.7670 s/op
+WorkloadResult   6: 1 op, 3195834000.00 ns, 3.1958 s/op
+WorkloadResult   7: 1 op, 3131519200.00 ns, 3.1315 s/op
+WorkloadResult   8: 1 op, 3249727200.00 ns, 3.2497 s/op
+WorkloadResult   9: 1 op, 3356489500.00 ns, 3.3565 s/op
+
+// AfterAll
+// Benchmark Process 34280 has exited with code 0.
+
+Mean = 3.071 s, StdErr = 0.067 s (2.19%), N = 9, StdDev = 0.202 s
+Min = 2.767 s, Q1 = 2.924 s, Median = 3.132 s, Q3 = 3.196 s, Max = 3.356 s
+IQR = 0.272 s, LowerFence = 2.517 s, UpperFence = 3.603 s
+ConfidenceInterval = [2.732 s; 3.410 s] (CI 99.9%), Margin = 0.339 s (11.04% of Mean)
+Skewness = -0.27, Kurtosis = 1.5, MValue = 2
+
+// ** Remained 8 (88.9%) benchmark(s) to run. Estimated finish 2026-04-03 11:54 (0h 6m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 고성능)
+// **************************
+// Benchmark: Benchmarks100Mb.SendByDotnetAOT: .NET 10.0(Runtime=.NET 10.0, IterationCount=10, WarmupCount=3)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "BenchmarkSuite1-.NET 10.0-1.dll" --anonymousPipes 1616 1600 --benchmarkName BenchmarkSuite1.Benchmarks100Mb.SendByDotnetAOT --job ".NET 10.0" --benchmarkId 1 in C:\Users\SSAFY\Documents\blog\benchmarks\BenchmarkSuite1\BenchmarkSuite1\bin\Release\net10.0\BenchmarkSuite1-.NET 10.0-1\bin\Release\net10.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.8
+// Runtime=.NET 10.0.5 (10.0.5, 10.0.526.15411), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 10.0(IterationCount=10, WarmupCount=3)
+
+OverheadJitting  1: 1 op, 177200.00 ns, 177.2000 us/op
+WorkloadJitting  1: 1 op, 3750053600.00 ns, 3.7501 s/op
+
+OverheadJitting  2: 1 op, 1000.00 ns, 1.0000 us/op
+WorkloadJitting  2: 1 op, 3419563800.00 ns, 3.4196 s/op
+
+WorkloadWarmup   1: 1 op, 3029834000.00 ns, 3.0298 s/op
+WorkloadWarmup   2: 1 op, 3290391600.00 ns, 3.2904 s/op
+WorkloadWarmup   3: 1 op, 3483964100.00 ns, 3.4840 s/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 3185214200.00 ns, 3.1852 s/op
+WorkloadActual   2: 1 op, 3307216400.00 ns, 3.3072 s/op
+WorkloadActual   3: 1 op, 3012753200.00 ns, 3.0128 s/op
+WorkloadActual   4: 1 op, 3338631700.00 ns, 3.3386 s/op
+WorkloadActual   5: 1 op, 2804875300.00 ns, 2.8049 s/op
+WorkloadActual   6: 1 op, 3368550400.00 ns, 3.3686 s/op
+WorkloadActual   7: 1 op, 3706534600.00 ns, 3.7065 s/op
+WorkloadActual   8: 1 op, 3573521300.00 ns, 3.5735 s/op
+WorkloadActual   9: 1 op, 3739985400.00 ns, 3.7400 s/op
+WorkloadActual  10: 1 op, 3098965200.00 ns, 3.0990 s/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 3185214200.00 ns, 3.1852 s/op
+WorkloadResult   2: 1 op, 3307216400.00 ns, 3.3072 s/op
+WorkloadResult   3: 1 op, 3012753200.00 ns, 3.0128 s/op
+WorkloadResult   4: 1 op, 3338631700.00 ns, 3.3386 s/op
+WorkloadResult   5: 1 op, 2804875300.00 ns, 2.8049 s/op
+WorkloadResult   6: 1 op, 3368550400.00 ns, 3.3686 s/op
+WorkloadResult   7: 1 op, 3706534600.00 ns, 3.7065 s/op
+WorkloadResult   8: 1 op, 3573521300.00 ns, 3.5735 s/op
+WorkloadResult   9: 1 op, 3739985400.00 ns, 3.7400 s/op
+WorkloadResult  10: 1 op, 3098965200.00 ns, 3.0990 s/op
+
+// AfterAll
+// Benchmark Process 31988 has exited with code 0.
+
+Mean = 3.314 s, StdErr = 0.095 s (2.88%), N = 10, StdDev = 0.302 s
+Min = 2.805 s, Q1 = 3.121 s, Median = 3.323 s, Q3 = 3.522 s, Max = 3.740 s
+IQR = 0.402 s, LowerFence = 2.518 s, UpperFence = 4.125 s
+ConfidenceInterval = [2.857 s; 3.770 s] (CI 99.9%), Margin = 0.456 s (13.77% of Mean)
+Skewness = -0.05, Kurtosis = 1.68, MValue = 2
+
+// ** Remained 7 (77.8%) benchmark(s) to run. Estimated finish 2026-04-03 11:54 (0h 5m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 고성능)
+// **************************
+// Benchmark: Benchmarks100Mb.SendByGo: .NET 10.0(Runtime=.NET 10.0, IterationCount=10, WarmupCount=3)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "BenchmarkSuite1-.NET 10.0-1.dll" --anonymousPipes 1684 1220 --benchmarkName BenchmarkSuite1.Benchmarks100Mb.SendByGo --job ".NET 10.0" --benchmarkId 2 in C:\Users\SSAFY\Documents\blog\benchmarks\BenchmarkSuite1\BenchmarkSuite1\bin\Release\net10.0\BenchmarkSuite1-.NET 10.0-1\bin\Release\net10.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.8
+// Runtime=.NET 10.0.5 (10.0.5, 10.0.526.15411), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 10.0(IterationCount=10, WarmupCount=3)
+
+OverheadJitting  1: 1 op, 189200.00 ns, 189.2000 us/op
+WorkloadJitting  1: 1 op, 2931245900.00 ns, 2.9312 s/op
+
+OverheadJitting  2: 1 op, 1000.00 ns, 1.0000 us/op
+WorkloadJitting  2: 1 op, 3717648100.00 ns, 3.7176 s/op
+
+WorkloadWarmup   1: 1 op, 3684681300.00 ns, 3.6847 s/op
+WorkloadWarmup   2: 1 op, 3056602200.00 ns, 3.0566 s/op
+WorkloadWarmup   3: 1 op, 3618530000.00 ns, 3.6185 s/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 3043029700.00 ns, 3.0430 s/op
+WorkloadActual   2: 1 op, 3811795800.00 ns, 3.8118 s/op
+WorkloadActual   3: 1 op, 3431364200.00 ns, 3.4314 s/op
+WorkloadActual   4: 1 op, 3504553800.00 ns, 3.5046 s/op
+WorkloadActual   5: 1 op, 3019509200.00 ns, 3.0195 s/op
+WorkloadActual   6: 1 op, 2868243200.00 ns, 2.8682 s/op
+WorkloadActual   7: 1 op, 2936763100.00 ns, 2.9368 s/op
+WorkloadActual   8: 1 op, 3555725700.00 ns, 3.5557 s/op
+WorkloadActual   9: 1 op, 2940499900.00 ns, 2.9405 s/op
+WorkloadActual  10: 1 op, 2960916900.00 ns, 2.9609 s/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 3043029700.00 ns, 3.0430 s/op
+WorkloadResult   2: 1 op, 3811795800.00 ns, 3.8118 s/op
+WorkloadResult   3: 1 op, 3431364200.00 ns, 3.4314 s/op
+WorkloadResult   4: 1 op, 3504553800.00 ns, 3.5046 s/op
+WorkloadResult   5: 1 op, 3019509200.00 ns, 3.0195 s/op
+WorkloadResult   6: 1 op, 2868243200.00 ns, 2.8682 s/op
+WorkloadResult   7: 1 op, 2936763100.00 ns, 2.9368 s/op
+WorkloadResult   8: 1 op, 3555725700.00 ns, 3.5557 s/op
+WorkloadResult   9: 1 op, 2940499900.00 ns, 2.9405 s/op
+WorkloadResult  10: 1 op, 2960916900.00 ns, 2.9609 s/op
+
+// AfterAll
+// Benchmark Process 30496 has exited with code 0.
+
+Mean = 3.207 s, StdErr = 0.106 s (3.30%), N = 10, StdDev = 0.335 s
+Min = 2.868 s, Q1 = 2.946 s, Median = 3.031 s, Q3 = 3.486 s, Max = 3.812 s
+IQR = 0.541 s, LowerFence = 2.135 s, UpperFence = 4.297 s
+ConfidenceInterval = [2.701 s; 3.713 s] (CI 99.9%), Margin = 0.506 s (15.77% of Mean)
+Skewness = 0.53, Kurtosis = 1.5, MValue = 3.33
+
+// ** Remained 6 (66.7%) benchmark(s) to run. Estimated finish 2026-04-03 11:54 (0h 4m from now) **
+Successfully reverted power plan (GUID: 381b4222-f694-41f0-9685-ff5bb260df2e FriendlyName: 균형 조정)
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  BenchmarkDotNet.Artifacts\results\BenchmarkSuite1.Benchmarks100Mb-report.csv
+  BenchmarkDotNet.Artifacts\results\BenchmarkSuite1.Benchmarks100Mb-report-github.md
+  BenchmarkDotNet.Artifacts\results\BenchmarkSuite1.Benchmarks100Mb-report.html
+  BenchmarkDotNet.Artifacts\results\BenchmarkSuite1.Benchmarks100Mb-report-full.json
+
+// * Detailed results *
+Benchmarks100Mb.SendByDotnet: .NET 10.0(Runtime=.NET 10.0, IterationCount=10, WarmupCount=3)
+Runtime = .NET 10.0.5 (10.0.5, 10.0.526.15411), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 3.071 s, StdErr = 0.067 s (2.19%), N = 9, StdDev = 0.202 s
+Min = 2.767 s, Q1 = 2.924 s, Median = 3.132 s, Q3 = 3.196 s, Max = 3.356 s
+IQR = 0.272 s, LowerFence = 2.517 s, UpperFence = 3.603 s
+ConfidenceInterval = [2.732 s; 3.410 s] (CI 99.9%), Margin = 0.339 s (11.04% of Mean)
+Skewness = -0.27, Kurtosis = 1.5, MValue = 2
+-------------------- Histogram --------------------
+[2.718 s ; 2.973 s) | @@@
+[2.973 s ; 3.288 s) | @@@@@
+[3.288 s ; 3.484 s) | @
+---------------------------------------------------
+
+Benchmarks100Mb.SendByDotnetAOT: .NET 10.0(Runtime=.NET 10.0, IterationCount=10, WarmupCount=3)
+Runtime = .NET 10.0.5 (10.0.5, 10.0.526.15411), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 3.314 s, StdErr = 0.095 s (2.88%), N = 10, StdDev = 0.302 s
+Min = 2.805 s, Q1 = 3.121 s, Median = 3.323 s, Q3 = 3.522 s, Max = 3.740 s
+IQR = 0.402 s, LowerFence = 2.518 s, UpperFence = 4.125 s
+ConfidenceInterval = [2.857 s; 3.770 s] (CI 99.9%), Margin = 0.456 s (13.77% of Mean)
+Skewness = -0.05, Kurtosis = 1.68, MValue = 2
+-------------------- Histogram --------------------
+[2.621 s ; 3.007 s) | @
+[3.007 s ; 3.473 s) | @@@@@@
+[3.473 s ; 3.841 s) | @@@
+---------------------------------------------------
+
+Benchmarks100Mb.SendByGo: .NET 10.0(Runtime=.NET 10.0, IterationCount=10, WarmupCount=3)
+Runtime = .NET 10.0.5 (10.0.5, 10.0.526.15411), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 3.207 s, StdErr = 0.106 s (3.30%), N = 10, StdDev = 0.335 s
+Min = 2.868 s, Q1 = 2.946 s, Median = 3.031 s, Q3 = 3.486 s, Max = 3.812 s
+IQR = 0.541 s, LowerFence = 2.135 s, UpperFence = 4.297 s
+ConfidenceInterval = [2.701 s; 3.713 s] (CI 99.9%), Margin = 0.506 s (15.77% of Mean)
+Skewness = 0.53, Kurtosis = 1.5, MValue = 3.33
+-------------------- Histogram --------------------
+[2.752 s ; 3.159 s) | @@@@@@
+[3.159 s ; 3.418 s) | 
+[3.418 s ; 3.825 s) | @@@@
+---------------------------------------------------
+
+// * Summary *
+
+BenchmarkDotNet v0.15.8, Windows 11 (10.0.26200.8037/25H2/2025Update/HudsonValley2)
+Intel Core Ultra 9 185H 2.50GHz, 1 CPU, 22 logical and 16 physical cores
+.NET SDK 10.0.201
+  [Host]    : .NET 10.0.5 (10.0.5, 10.0.526.15411), X64 RyuJIT x86-64-v3
+  .NET 10.0 : .NET 10.0.5 (10.0.5, 10.0.526.15411), X64 RyuJIT x86-64-v3
+
+Job=.NET 10.0  Runtime=.NET 10.0  IterationCount=10  
+WarmupCount=3  
+
+| Method          | Mean    | Error    | StdDev   |
+|---------------- |--------:|---------:|---------:|
+| SendByDotnet    | 3.071 s | 0.3391 s | 0.2018 s |
+| SendByDotnetAOT | 3.314 s | 0.4562 s | 0.3017 s |
+| SendByGo        | 3.207 s | 0.5059 s | 0.3346 s |
+
+// * Hints *
+Outliers
+  Benchmarks100Mb.SendByDotnet: .NET 10.0 -> 1 outlier  was  removed (3.97 s)
+// * Config Issues *
+
+// * Warnings *
+Configuration
+  Summary -> The exporter MarkdownExporter-github is already present in configuration. There may be unexpected results.
+
+// * Legends *
+  Mean   : Arithmetic mean of all measurements
+  Error  : Half of 99.9% confidence interval
+  StdDev : Standard deviation of all measurements
+  1 s    : 1 Second (1 sec)
+
+// ***** BenchmarkRunner: End *****
+Run time: 00:02:27 (147.54 sec), executed benchmarks: 3
+
+// Found 3 benchmarks:
+//   Benchmarks10Gb.SendByDotnet: .NET 10.0(Runtime=.NET 10.0, IterationCount=3, WarmupCount=1)
+//   Benchmarks10Gb.SendByDotnetAOT: .NET 10.0(Runtime=.NET 10.0, IterationCount=3, WarmupCount=1)
+//   Benchmarks10Gb.SendByGo: .NET 10.0(Runtime=.NET 10.0, IterationCount=3, WarmupCount=1)
+
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 고성능)
+// **************************
+// Benchmark: Benchmarks10Gb.SendByDotnet: .NET 10.0(Runtime=.NET 10.0, IterationCount=3, WarmupCount=1)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "BenchmarkSuite1-.NET 10.0-1.dll" --anonymousPipes 1420 1384 --benchmarkName BenchmarkSuite1.Benchmarks10Gb.SendByDotnet --job ".NET 10.0" --benchmarkId 3 in C:\Users\SSAFY\Documents\blog\benchmarks\BenchmarkSuite1\BenchmarkSuite1\bin\Release\net10.0\BenchmarkSuite1-.NET 10.0-1\bin\Release\net10.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.8
+// Runtime=.NET 10.0.5 (10.0.5, 10.0.526.15411), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 10.0(IterationCount=3, WarmupCount=1)
+
+OverheadJitting  1: 1 op, 157000.00 ns, 157.0000 us/op
+WorkloadJitting  1: 1 op, 331976719600.00 ns, 5.5329 m/op
+
+WorkloadWarmup   1: 1 op, 296578098800.00 ns, 4.9430 m/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 297293450700.00 ns, 4.9549 m/op
+WorkloadActual   2: 1 op, 301575353800.00 ns, 5.0263 m/op
+WorkloadActual   3: 1 op, 303506649600.00 ns, 5.0584 m/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 297293450700.00 ns, 4.9549 m/op
+WorkloadResult   2: 1 op, 301575353800.00 ns, 5.0263 m/op
+WorkloadResult   3: 1 op, 303506649600.00 ns, 5.0584 m/op
+
+// AfterAll
+// Benchmark Process 28064 has exited with code 0.
+
+Mean = 5.013 m, StdErr = 0.031 m (0.61%), N = 3, StdDev = 0.053 m
+Min = 4.955 m, Q1 = 4.991 m, Median = 5.026 m, Q3 = 5.042 m, Max = 5.058 m
+IQR = 0.052 m, LowerFence = 4.913 m, UpperFence = 5.120 m
+ConfidenceInterval = [4.046 m; 5.980 m] (CI 99.9%), Margin = 0.967 m (19.29% of Mean)
+Skewness = -0.23, Kurtosis = 0.67, MValue = 2
+
+// ** Remained 5 (55.6%) benchmark(s) to run. Estimated finish 2026-04-03 12:50 (0h 35m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 고성능)
+// **************************
+// Benchmark: Benchmarks10Gb.SendByDotnetAOT: .NET 10.0(Runtime=.NET 10.0, IterationCount=3, WarmupCount=1)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "BenchmarkSuite1-.NET 10.0-1.dll" --anonymousPipes 952 936 --benchmarkName BenchmarkSuite1.Benchmarks10Gb.SendByDotnetAOT --job ".NET 10.0" --benchmarkId 4 in C:\Users\SSAFY\Documents\blog\benchmarks\BenchmarkSuite1\BenchmarkSuite1\bin\Release\net10.0\BenchmarkSuite1-.NET 10.0-1\bin\Release\net10.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.8
+// Runtime=.NET 10.0.5 (10.0.5, 10.0.526.15411), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 10.0(IterationCount=3, WarmupCount=1)
+
+OverheadJitting  1: 1 op, 135500.00 ns, 135.5000 us/op
+WorkloadJitting  1: 1 op, 290926177200.00 ns, 4.8488 m/op
+
+WorkloadWarmup   1: 1 op, 300585674700.00 ns, 5.0098 m/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 308833729100.00 ns, 5.1472 m/op
+WorkloadActual   2: 1 op, 294031071800.00 ns, 4.9005 m/op
+WorkloadActual   3: 1 op, 286824198500.00 ns, 4.7804 m/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 308833729100.00 ns, 5.1472 m/op
+WorkloadResult   2: 1 op, 294031071800.00 ns, 4.9005 m/op
+WorkloadResult   3: 1 op, 286824198500.00 ns, 4.7804 m/op
+
+// AfterAll
+// Benchmark Process 2880 has exited with code 0.
+
+Mean = 4.943 m, StdErr = 0.108 m (2.18%), N = 3, StdDev = 0.187 m
+Min = 4.780 m, Q1 = 4.840 m, Median = 4.901 m, Q3 = 5.024 m, Max = 5.147 m
+IQR = 0.183 m, LowerFence = 4.565 m, UpperFence = 5.299 m
+ConfidenceInterval = [1.531 m; 8.355 m] (CI 99.9%), Margin = 3.412 m (69.03% of Mean)
+Skewness = 0.21, Kurtosis = 0.67, MValue = 2
+
+// ** Remained 4 (44.4%) benchmark(s) to run. Estimated finish 2026-04-03 13:22 (0h 42m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 고성능)
+// **************************
+// Benchmark: Benchmarks10Gb.SendByGo: .NET 10.0(Runtime=.NET 10.0, IterationCount=3, WarmupCount=1)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "BenchmarkSuite1-.NET 10.0-1.dll" --anonymousPipes 1752 1748 --benchmarkName BenchmarkSuite1.Benchmarks10Gb.SendByGo --job ".NET 10.0" --benchmarkId 5 in C:\Users\SSAFY\Documents\blog\benchmarks\BenchmarkSuite1\BenchmarkSuite1\bin\Release\net10.0\BenchmarkSuite1-.NET 10.0-1\bin\Release\net10.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.8
+// Runtime=.NET 10.0.5 (10.0.5, 10.0.526.15411), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 10.0(IterationCount=3, WarmupCount=1)
+
+OverheadJitting  1: 1 op, 123500.00 ns, 123.5000 us/op
+WorkloadJitting  1: 1 op, 293863347900.00 ns, 4.8977 m/op
+
+WorkloadWarmup   1: 1 op, 334595684500.00 ns, 5.5766 m/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 304778312700.00 ns, 5.0796 m/op
+WorkloadActual   2: 1 op, 326928146100.00 ns, 5.4488 m/op
+WorkloadActual   3: 1 op, 285592305000.00 ns, 4.7599 m/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 304778312700.00 ns, 5.0796 m/op
+WorkloadResult   2: 1 op, 326928146100.00 ns, 5.4488 m/op
+WorkloadResult   3: 1 op, 285592305000.00 ns, 4.7599 m/op
+
+// AfterAll
+// Benchmark Process 35500 has exited with code 0.
+
+Mean = 5.096 m, StdErr = 0.199 m (3.91%), N = 3, StdDev = 0.345 m
+Min = 4.760 m, Q1 = 4.920 m, Median = 5.080 m, Q3 = 5.264 m, Max = 5.449 m
+IQR = 0.344 m, LowerFence = 4.403 m, UpperFence = 5.781 m
+ConfidenceInterval = [-1.194 m; 11.386 m] (CI 99.9%), Margin = 6.290 m (123.42% of Mean)
+Skewness = 0.05, Kurtosis = 0.67, MValue = 2
+
+// ** Remained 3 (33.3%) benchmark(s) to run. Estimated finish 2026-04-03 13:45 (0h 39m from now) **
+Successfully reverted power plan (GUID: 381b4222-f694-41f0-9685-ff5bb260df2e FriendlyName: 균형 조정)
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  BenchmarkDotNet.Artifacts\results\BenchmarkSuite1.Benchmarks10Gb-report.csv
+  BenchmarkDotNet.Artifacts\results\BenchmarkSuite1.Benchmarks10Gb-report-github.md
+  BenchmarkDotNet.Artifacts\results\BenchmarkSuite1.Benchmarks10Gb-report.html
+  BenchmarkDotNet.Artifacts\results\BenchmarkSuite1.Benchmarks10Gb-report-full.json
+
+// * Detailed results *
+Benchmarks10Gb.SendByDotnet: .NET 10.0(Runtime=.NET 10.0, IterationCount=3, WarmupCount=1)
+Runtime = .NET 10.0.5 (10.0.5, 10.0.526.15411), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 5.013 m, StdErr = 0.031 m (0.61%), N = 3, StdDev = 0.053 m
+Min = 4.955 m, Q1 = 4.991 m, Median = 5.026 m, Q3 = 5.042 m, Max = 5.058 m
+IQR = 0.052 m, LowerFence = 4.913 m, UpperFence = 5.120 m
+ConfidenceInterval = [4.046 m; 5.980 m] (CI 99.9%), Margin = 0.967 m (19.29% of Mean)
+Skewness = -0.23, Kurtosis = 0.67, MValue = 2
+-------------------- Histogram --------------------
+[4.907 m ; 5.107 m) | @@@
+---------------------------------------------------
+
+Benchmarks10Gb.SendByDotnetAOT: .NET 10.0(Runtime=.NET 10.0, IterationCount=3, WarmupCount=1)
+Runtime = .NET 10.0.5 (10.0.5, 10.0.526.15411), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 4.943 m, StdErr = 0.108 m (2.18%), N = 3, StdDev = 0.187 m
+Min = 4.780 m, Q1 = 4.840 m, Median = 4.901 m, Q3 = 5.024 m, Max = 5.147 m
+IQR = 0.183 m, LowerFence = 4.565 m, UpperFence = 5.299 m
+ConfidenceInterval = [1.531 m; 8.355 m] (CI 99.9%), Margin = 3.412 m (69.03% of Mean)
+Skewness = 0.21, Kurtosis = 0.67, MValue = 2
+-------------------- Histogram --------------------
+[4.670 m ; 5.011 m) | @@
+[5.011 m ; 5.317 m) | @
+---------------------------------------------------
+
+Benchmarks10Gb.SendByGo: .NET 10.0(Runtime=.NET 10.0, IterationCount=3, WarmupCount=1)
+Runtime = .NET 10.0.5 (10.0.5, 10.0.526.15411), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 5.096 m, StdErr = 0.199 m (3.91%), N = 3, StdDev = 0.345 m
+Min = 4.760 m, Q1 = 4.920 m, Median = 5.080 m, Q3 = 5.264 m, Max = 5.449 m
+IQR = 0.344 m, LowerFence = 4.403 m, UpperFence = 5.781 m
+ConfidenceInterval = [-1.194 m; 11.386 m] (CI 99.9%), Margin = 6.290 m (123.42% of Mean)
+Skewness = 0.05, Kurtosis = 0.67, MValue = 2
+-------------------- Histogram --------------------
+[4.606 m ; 5.233 m) | @@
+[5.233 m ; 5.763 m) | @
+---------------------------------------------------
+
+// * Summary *
+
+BenchmarkDotNet v0.15.8, Windows 11 (10.0.26200.8037/25H2/2025Update/HudsonValley2)
+Intel Core Ultra 9 185H 2.50GHz, 1 CPU, 22 logical and 16 physical cores
+.NET SDK 10.0.201
+  [Host]    : .NET 10.0.5 (10.0.5, 10.0.526.15411), X64 RyuJIT x86-64-v3
+  .NET 10.0 : .NET 10.0.5 (10.0.5, 10.0.526.15411), X64 RyuJIT x86-64-v3
+
+Job=.NET 10.0  Runtime=.NET 10.0  IterationCount=3  
+WarmupCount=1  
+
+| Method          | Mean    | Error    | StdDev   |
+|---------------- |--------:|---------:|---------:|
+| SendByDotnet    | 5.013 m | 0.9669 m | 0.0530 m |
+| SendByDotnetAOT | 4.943 m | 3.4119 m | 0.1870 m |
+| SendByGo        | 5.096 m | 6.2897 m | 0.3448 m |
+// * Config Issues *
+
+// * Warnings *
+Configuration
+  Summary -> The exporter MarkdownExporter-github is already present in configuration. There may be unexpected results.
+
+// * Legends *
+  Mean   : Arithmetic mean of all measurements
+  Error  : Half of 99.9% confidence interval
+  StdDev : Standard deviation of all measurements
+  1 m    : 1 Minute (60 sec)
+
+// ***** BenchmarkRunner: End *****
+Run time: 01:15:59 (4559.89 sec), executed benchmarks: 3
+
+// Found 3 benchmarks:
+//   Benchmarks1Gb.SendByDotnet: .NET 10.0(Runtime=.NET 10.0, IterationCount=6, WarmupCount=2)
+//   Benchmarks1Gb.SendByDotnetAOT: .NET 10.0(Runtime=.NET 10.0, IterationCount=6, WarmupCount=2)
+//   Benchmarks1Gb.SendByGo: .NET 10.0(Runtime=.NET 10.0, IterationCount=6, WarmupCount=2)
+
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 고성능)
+// **************************
+// Benchmark: Benchmarks1Gb.SendByDotnet: .NET 10.0(Runtime=.NET 10.0, IterationCount=6, WarmupCount=2)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "BenchmarkSuite1-.NET 10.0-1.dll" --anonymousPipes 1800 1764 --benchmarkName BenchmarkSuite1.Benchmarks1Gb.SendByDotnet --job ".NET 10.0" --benchmarkId 6 in C:\Users\SSAFY\Documents\blog\benchmarks\BenchmarkSuite1\BenchmarkSuite1\bin\Release\net10.0\BenchmarkSuite1-.NET 10.0-1\bin\Release\net10.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.8
+// Runtime=.NET 10.0.5 (10.0.5, 10.0.526.15411), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 10.0(IterationCount=6, WarmupCount=2)
+
+OverheadJitting  1: 1 op, 161600.00 ns, 161.6000 us/op
+WorkloadJitting  1: 1 op, 29300455200.00 ns, 29.3005 s/op
+
+WorkloadWarmup   1: 1 op, 29726202000.00 ns, 29.7262 s/op
+WorkloadWarmup   2: 1 op, 29872316000.00 ns, 29.8723 s/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 28070167900.00 ns, 28.0702 s/op
+WorkloadActual   2: 1 op, 29529848600.00 ns, 29.5298 s/op
+WorkloadActual   3: 1 op, 28936301500.00 ns, 28.9363 s/op
+WorkloadActual   4: 1 op, 28037287600.00 ns, 28.0373 s/op
+WorkloadActual   5: 1 op, 30097545200.00 ns, 30.0975 s/op
+WorkloadActual   6: 1 op, 28719873100.00 ns, 28.7199 s/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 28070167900.00 ns, 28.0702 s/op
+WorkloadResult   2: 1 op, 29529848600.00 ns, 29.5298 s/op
+WorkloadResult   3: 1 op, 28936301500.00 ns, 28.9363 s/op
+WorkloadResult   4: 1 op, 28037287600.00 ns, 28.0373 s/op
+WorkloadResult   5: 1 op, 30097545200.00 ns, 30.0975 s/op
+WorkloadResult   6: 1 op, 28719873100.00 ns, 28.7199 s/op
+
+// AfterAll
+// Benchmark Process 32288 has exited with code 0.
+
+Mean = 28.899 s, StdErr = 0.332 s (1.15%), N = 6, StdDev = 0.812 s
+Min = 28.037 s, Q1 = 28.233 s, Median = 28.828 s, Q3 = 29.381 s, Max = 30.098 s
+IQR = 1.149 s, LowerFence = 26.509 s, UpperFence = 31.105 s
+ConfidenceInterval = [26.621 s; 31.176 s] (CI 99.9%), Margin = 2.277 s (7.88% of Mean)
+Skewness = 0.24, Kurtosis = 1.24, MValue = 2
+
+// ** Remained 2 (22.2%) benchmark(s) to run. Estimated finish 2026-04-03 13:34 (0h 23m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 고성능)
+// **************************
+// Benchmark: Benchmarks1Gb.SendByDotnetAOT: .NET 10.0(Runtime=.NET 10.0, IterationCount=6, WarmupCount=2)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "BenchmarkSuite1-.NET 10.0-1.dll" --anonymousPipes 1828 1784 --benchmarkName BenchmarkSuite1.Benchmarks1Gb.SendByDotnetAOT --job ".NET 10.0" --benchmarkId 7 in C:\Users\SSAFY\Documents\blog\benchmarks\BenchmarkSuite1\BenchmarkSuite1\bin\Release\net10.0\BenchmarkSuite1-.NET 10.0-1\bin\Release\net10.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.8
+// Runtime=.NET 10.0.5 (10.0.5, 10.0.526.15411), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 10.0(IterationCount=6, WarmupCount=2)
+
+OverheadJitting  1: 1 op, 147200.00 ns, 147.2000 us/op
+WorkloadJitting  1: 1 op, 28848115100.00 ns, 28.8481 s/op
+
+WorkloadWarmup   1: 1 op, 27910646100.00 ns, 27.9106 s/op
+WorkloadWarmup   2: 1 op, 27238706800.00 ns, 27.2387 s/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 28634386400.00 ns, 28.6344 s/op
+WorkloadActual   2: 1 op, 29727513100.00 ns, 29.7275 s/op
+WorkloadActual   3: 1 op, 29572127800.00 ns, 29.5721 s/op
+WorkloadActual   4: 1 op, 29518653100.00 ns, 29.5187 s/op
+WorkloadActual   5: 1 op, 28451771900.00 ns, 28.4518 s/op
+WorkloadActual   6: 1 op, 29395641500.00 ns, 29.3956 s/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 28634386400.00 ns, 28.6344 s/op
+WorkloadResult   2: 1 op, 29727513100.00 ns, 29.7275 s/op
+WorkloadResult   3: 1 op, 29572127800.00 ns, 29.5721 s/op
+WorkloadResult   4: 1 op, 29518653100.00 ns, 29.5187 s/op
+WorkloadResult   5: 1 op, 28451771900.00 ns, 28.4518 s/op
+WorkloadResult   6: 1 op, 29395641500.00 ns, 29.3956 s/op
+
+// AfterAll
+// Benchmark Process 26720 has exited with code 0.
+
+Mean = 29.217 s, StdErr = 0.219 s (0.75%), N = 6, StdDev = 0.536 s
+Min = 28.452 s, Q1 = 28.825 s, Median = 29.457 s, Q3 = 29.559 s, Max = 29.728 s
+IQR = 0.734 s, LowerFence = 27.724 s, UpperFence = 30.660 s
+ConfidenceInterval = [27.715 s; 30.719 s] (CI 99.9%), Margin = 1.502 s (5.14% of Mean)
+Skewness = -0.47, Kurtosis = 1.11, MValue = 2
+
+// ** Remained 1 (11.1%) benchmark(s) to run. Estimated finish 2026-04-03 13:25 (0h 10m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: 고성능)
+// **************************
+// Benchmark: Benchmarks1Gb.SendByGo: .NET 10.0(Runtime=.NET 10.0, IterationCount=6, WarmupCount=2)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "BenchmarkSuite1-.NET 10.0-1.dll" --anonymousPipes 1784 1836 --benchmarkName BenchmarkSuite1.Benchmarks1Gb.SendByGo --job ".NET 10.0" --benchmarkId 8 in C:\Users\SSAFY\Documents\blog\benchmarks\BenchmarkSuite1\BenchmarkSuite1\bin\Release\net10.0\BenchmarkSuite1-.NET 10.0-1\bin\Release\net10.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.8
+// Runtime=.NET 10.0.5 (10.0.5, 10.0.526.15411), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL,AvxVnni,SERIALIZE VectorSize=256
+// Job: .NET 10.0(IterationCount=6, WarmupCount=2)
+
+OverheadJitting  1: 1 op, 137200.00 ns, 137.2000 us/op
+WorkloadJitting  1: 1 op, 27332238200.00 ns, 27.3322 s/op
+
+WorkloadWarmup   1: 1 op, 25555525800.00 ns, 25.5555 s/op
+WorkloadWarmup   2: 1 op, 28121241600.00 ns, 28.1212 s/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 28413527000.00 ns, 28.4135 s/op
+WorkloadActual   2: 1 op, 27086353400.00 ns, 27.0864 s/op
+WorkloadActual   3: 1 op, 31872276700.00 ns, 31.8723 s/op
+WorkloadActual   4: 1 op, 33102713100.00 ns, 33.1027 s/op
+WorkloadActual   5: 1 op, 28676356600.00 ns, 28.6764 s/op
+WorkloadActual   6: 1 op, 28002522800.00 ns, 28.0025 s/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 28413527000.00 ns, 28.4135 s/op
+WorkloadResult   2: 1 op, 27086353400.00 ns, 27.0864 s/op
+WorkloadResult   3: 1 op, 31872276700.00 ns, 31.8723 s/op
+WorkloadResult   4: 1 op, 33102713100.00 ns, 33.1027 s/op
+WorkloadResult   5: 1 op, 28676356600.00 ns, 28.6764 s/op
+WorkloadResult   6: 1 op, 28002522800.00 ns, 28.0025 s/op
+
+// AfterAll
+// Benchmark Process 31780 has exited with code 0.
+
+Mean = 29.526 s, StdErr = 0.975 s (3.30%), N = 6, StdDev = 2.389 s
+Min = 27.086 s, Q1 = 28.105 s, Median = 28.545 s, Q3 = 31.073 s, Max = 33.103 s
+IQR = 2.968 s, LowerFence = 23.653 s, UpperFence = 35.525 s
+ConfidenceInterval = [22.827 s; 36.224 s] (CI 99.9%), Margin = 6.698 s (22.69% of Mean)
+Skewness = 0.47, Kurtosis = 1.21, MValue = 3
+
+// ** Remained 0 (0.0%) benchmark(s) to run. Estimated finish 2026-04-03 13:19 (0h 0m from now) **
+Successfully reverted power plan (GUID: 381b4222-f694-41f0-9685-ff5bb260df2e FriendlyName: 균형 조정)
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  BenchmarkDotNet.Artifacts\results\BenchmarkSuite1.Benchmarks1Gb-report.csv
+  BenchmarkDotNet.Artifacts\results\BenchmarkSuite1.Benchmarks1Gb-report-github.md
+  BenchmarkDotNet.Artifacts\results\BenchmarkSuite1.Benchmarks1Gb-report.html
+  BenchmarkDotNet.Artifacts\results\BenchmarkSuite1.Benchmarks1Gb-report-full.json
+
+// * Detailed results *
+Benchmarks1Gb.SendByDotnet: .NET 10.0(Runtime=.NET 10.0, IterationCount=6, WarmupCount=2)
+Runtime = .NET 10.0.5 (10.0.5, 10.0.526.15411), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 28.899 s, StdErr = 0.332 s (1.15%), N = 6, StdDev = 0.812 s
+Min = 28.037 s, Q1 = 28.233 s, Median = 28.828 s, Q3 = 29.381 s, Max = 30.098 s
+IQR = 1.149 s, LowerFence = 26.509 s, UpperFence = 31.105 s
+ConfidenceInterval = [26.621 s; 31.176 s] (CI 99.9%), Margin = 2.277 s (7.88% of Mean)
+Skewness = 0.24, Kurtosis = 1.24, MValue = 2
+-------------------- Histogram --------------------
+[27.900 s ; 29.073 s) | @@@@
+[29.073 s ; 30.400 s) | @@
+---------------------------------------------------
+
+Benchmarks1Gb.SendByDotnetAOT: .NET 10.0(Runtime=.NET 10.0, IterationCount=6, WarmupCount=2)
+Runtime = .NET 10.0.5 (10.0.5, 10.0.526.15411), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 29.217 s, StdErr = 0.219 s (0.75%), N = 6, StdDev = 0.536 s
+Min = 28.452 s, Q1 = 28.825 s, Median = 29.457 s, Q3 = 29.559 s, Max = 29.728 s
+IQR = 0.734 s, LowerFence = 27.724 s, UpperFence = 30.660 s
+ConfidenceInterval = [27.715 s; 30.719 s] (CI 99.9%), Margin = 1.502 s (5.14% of Mean)
+Skewness = -0.47, Kurtosis = 1.11, MValue = 2
+-------------------- Histogram --------------------
+[28.156 s ; 28.930 s) | @@
+[28.930 s ; 29.948 s) | @@@@
+---------------------------------------------------
+
+Benchmarks1Gb.SendByGo: .NET 10.0(Runtime=.NET 10.0, IterationCount=6, WarmupCount=2)
+Runtime = .NET 10.0.5 (10.0.5, 10.0.526.15411), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 29.526 s, StdErr = 0.975 s (3.30%), N = 6, StdDev = 2.389 s
+Min = 27.086 s, Q1 = 28.105 s, Median = 28.545 s, Q3 = 31.073 s, Max = 33.103 s
+IQR = 2.968 s, LowerFence = 23.653 s, UpperFence = 35.525 s
+ConfidenceInterval = [22.827 s; 36.224 s] (CI 99.9%), Margin = 6.698 s (22.69% of Mean)
+Skewness = 0.47, Kurtosis = 1.21, MValue = 3
+-------------------- Histogram --------------------
+[26.156 s ; 29.607 s) | @@@@
+[29.607 s ; 30.762 s) | 
+[30.762 s ; 34.828 s) | @@
+---------------------------------------------------
+
+// * Summary *
+
+BenchmarkDotNet v0.15.8, Windows 11 (10.0.26200.8037/25H2/2025Update/HudsonValley2)
+Intel Core Ultra 9 185H 2.50GHz, 1 CPU, 22 logical and 16 physical cores
+.NET SDK 10.0.201
+  [Host]    : .NET 10.0.5 (10.0.5, 10.0.526.15411), X64 RyuJIT x86-64-v3
+  .NET 10.0 : .NET 10.0.5 (10.0.5, 10.0.526.15411), X64 RyuJIT x86-64-v3
+
+Job=.NET 10.0  Runtime=.NET 10.0  IterationCount=6  
+WarmupCount=2  
+
+| Method          | Mean    | Error   | StdDev  |
+|---------------- |--------:|--------:|--------:|
+| SendByDotnet    | 28.90 s | 2.277 s | 0.812 s |
+| SendByDotnetAOT | 29.22 s | 1.502 s | 0.536 s |
+| SendByGo        | 29.53 s | 6.698 s | 2.389 s |
+// * Config Issues *
+
+// * Warnings *
+Configuration
+  Summary -> The exporter MarkdownExporter-github is already present in configuration. There may be unexpected results.
+
+// * Legends *
+  Mean   : Arithmetic mean of all measurements
+  Error  : Half of 99.9% confidence interval
+  StdDev : Standard deviation of all measurements
+  1 s    : 1 Second (1 sec)
+
+// ***** BenchmarkRunner: End *****
+Run time: 00:13:01 (781.59 sec), executed benchmarks: 3
+
+Global total time: 01:31:35 (5495.71 sec), executed benchmarks: 9
+// * Artifacts cleanup *
+Artifacts cleanup is finished
