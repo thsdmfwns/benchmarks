@@ -52,11 +52,11 @@ ensure_required_file "$BENCHMARK_FILES_DIR/$BENCHMARK_FILE_1GB"
 ensure_required_file "$BENCHMARK_FILES_DIR/$BENCHMARK_FILE_10GB"
 
 if [ "$#" -gt 0 ]; then
-  exec dotnet BenchmarkSuite1.dll "$@"
+  exec dotnet run -c Release --no-build --project BenchmarkSuite1.csproj -- "$@"
 fi
 
 if [ -n "${BENCHMARK_FILTER:-}" ]; then
-  exec dotnet BenchmarkSuite1.dll --filter "$BENCHMARK_FILTER"
+  exec dotnet run -c Release --no-build --project BenchmarkSuite1.csproj -- --filter "$BENCHMARK_FILTER"
 fi
 
-exec dotnet BenchmarkSuite1.dll
+exec dotnet run -c Release --no-build --project BenchmarkSuite1.csproj

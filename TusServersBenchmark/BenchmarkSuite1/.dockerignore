@@ -1,0 +1,6 @@
+files/
+BenchmarkDotNet.Artifacts/
+bin/
+obj/
+.vs/
+.idea/
