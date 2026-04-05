@@ -6,7 +6,7 @@ services:
     environment:
       ASPNETCORE_URLS: http://+:80
     volumes:
-      - bm_dotnet_data:/etc/tusfiles
+      - bm_data:/etc/tusfiles
     ports:
       - "8082:80"
     restart: unless-stopped
@@ -18,7 +18,7 @@ services:
     environment:
       ASPNETCORE_URLS: http://+:8080
     volumes:
-      - bm_dotnet_aot_data:/etc/tusfiles
+      - bm_data:/etc/tusfiles
     ports:
       - "8083:8080"
     restart: unless-stopped
@@ -31,12 +31,35 @@ services:
       - "-base-path=/files"
       - "-upload-dir=/srv/tusd-data"
     volumes:
-      - bm_tusd_data:/srv/tusd-data
+      - bm_data:/srv/tusd-data
     ports:
       - "8084:8080"
     restart: unless-stopped
 
+  benchmark_runner:
+    build:
+      context: ../BenchmarkSuite1
+      dockerfile: Dockerfile
+    environment:
+      DOTNET_TUS_URL: http://bm_dotnet/files
+      DOTNET_AOT_TUS_URL: http://bm_dotnet_aot:8080/files
+      GO_TUS_URL: http://bm_golang:8080/files
+      BENCHMARK_FILES_DIR: /files
+      UPLOAD_STORE_DIR: /stores/
+      BENCHMARK_FILE_100MB: 100MB.bin
+      BENCHMARK_FILE_1GB: 1GB.bin
+      BENCHMARK_FILE_10GB: 10GB.bin
+      BENCHMARK_FILTER: ${BENCHMARK_FILTER:-}
+    depends_on:
+      - bm_dotnet
+      - bm_dotnet_aot
+      - bm_golang
+    volumes:
+      - ../BenchmarkSuite1/files:/files:ro
+      - bm_data:/stores/
+      - bm_benchmark_results:/app/BenchmarkDotNet.Artifacts
+    restart: "no"
+
 volumes:
-  bm_dotnet_data:
-  bm_dotnet_aot_data:
-  bm_tusd_data:
+  bm_data:
+  bm_benchmark_results:
