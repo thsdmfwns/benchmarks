@@ -48,8 +48,8 @@ services:
       UPLOAD_STORE_DIR: /stores/
       BENCHMARK_FILE_100MB: 100MB.bin
       BENCHMARK_FILE_1GB: 1GB.bin
-      BENCHMARK_FILE_10GB: 10GB.bin
-      BENCHMARK_FILTER: ${BENCHMARK_FILTER:-}
+      BENCHMARK_FILE_10GB: 10GB.bin 
+      BENCHMARK_FILTER: "${BENCHMARK_FILTER:-*}"
     depends_on:
       - bm_dotnet
       - bm_dotnet_aot
