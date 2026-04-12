@@ -7,5 +7,6 @@ COPY . ./
 RUN dotnet restore "./BenchmarkSuite1.csproj"
 RUN dotnet build "./BenchmarkSuite1.csproj" -c Release --no-restore
 COPY docker-entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+RUN sed -i 's/\r$//' /entrypoint.sh \
+    && chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
